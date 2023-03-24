@@ -5,14 +5,14 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Peça {
-	private List<Integer> peça = new ArrayList<Integer>();
+public class Peca {
+	private List<Integer> peca = new ArrayList<Integer>();
 	private List<Integer> lista = new ArrayList<Integer>();
 	private List<Integer> deck = new ArrayList<Integer>();
 	private int valor;
 	private int score;
 
-	public Peça(){	
+	public Peca(){	
 	}
 	
 	public void setLista() {
@@ -21,11 +21,11 @@ public class Peça {
 	    }
 	}
 	
-	public void setPeça() {
+	public void setPeca() {
 		this.setLista();
 		Collections.shuffle(this.lista);
-		this.peça.add(lista.get(0));
-		this.peça.add(lista.get(1));
+		this.peca.add(lista.get(0));
+		this.peca.add(lista.get(1));
 	}
 	
 	public List<Integer> getDeck() {
@@ -33,17 +33,18 @@ public class Peça {
 	}
 
 	public void setDeck() {
-		this.deck.addAll(this.peça.subList(0, 2));
-		this.peça.clear();
+		this.deck.addAll(this.peca.subList(0, 2));
+		this.peca.clear();
 	}
 
-	public List<Integer> getPeça(){
-		return this.peça;
+	public List<Integer> getPeca(){
+		return this.peca;
 	}
 	
+	
 	public void setValor(){
-		int num1 = this.peça.get(0);
-		int num2 = this.peça.get(1);
+		int num1 = this.peca.get(0);
+		int num2 = this.peca.get(1);
 		if(num1 == num2){
 			this.valor = 2 * (num1 + num2);
 		}
@@ -56,10 +57,10 @@ public class Peça {
 	}
 	
 	public void setScore(Jogador j1, Jogador j2) {
-		if(j1.peça.getValor() > j2.peça.getValor()) {
+		if(j1.peca.getValor() > j2.peca.getValor()) {
 			this.score += 1;
 		}
-		else if(j1.peça.getValor() == j2.peça.getValor()) {
+		else if(j1.peca.getValor() == j2.peca.getValor()) {
 			this.score += 1;
 		}
 		}
@@ -74,7 +75,7 @@ public class Peça {
 
 	@Override
 	public String toString() {
-		return "Peça: " + this.peça;
+		return "peca: " + this.peca;
 	}
 	
 	public String toStringDeck() {

@@ -64,12 +64,12 @@ public class Main{
 			jogador2.setBasics();
 			
 			System.out.println("\n Jogador 1" + "               " + " Jogador 2");
-			System.out.println("Peça: " + jogador1.peça.getPeça() + "             " +  "Peça: " + jogador2.peça.getPeça());	
-			System.out.println("Valor: " + jogador1.peça.getValor() + "                 " +  "Valor: " + jogador2.peça.getValor());	
-			jogador1.peça.setScore(jogador1, jogador2);
-			jogador2.peça.setScore(jogador2, jogador1);
-			jogador1.peça.setDeck();
-			jogador2.peça.setDeck();
+			System.out.println("Peça: " + jogador1.peca.getPeca() + "             " +  "Peça: " + jogador2.peca.getPeca());	
+			System.out.println("Valor: " + jogador1.peca.getValor() + "                 " +  "Valor: " + jogador2.peca.getValor());	
+			jogador1.peca.setScore(jogador1, jogador2);
+			jogador2.peca.setScore(jogador2, jogador1);
+			jogador1.peca.setDeck();
+			jogador2.peca.setDeck();
 			
 			scan = new Scanner(System.in);
 			System.out.println("\nPara continuar, pressione ENTER");
@@ -79,7 +79,7 @@ public class Main{
 		clearConsole();
 		setVencedor(jogador1, jogador2);
 		System.out.println(vencedor != null?"O vencedor foi: " + vencedor + ", Parabéns!": "Empate.");
-		System.out.println("\nJogador: " + jogador1.getNome() + jogador1.peça.toStringDeck() + "\nScore: "+jogador1.peça.getScore() + "\n\nJogador: " + jogador2.getNome() + jogador2.peça.toStringDeck() + "\nScore: "+jogador2.peça.getScore());
+		System.out.println("\nJogador: " + jogador1.getNome() + jogador1.peca.toStringDeck() + "\nScore: "+jogador1.peca.getScore() + "\n\nJogador: " + jogador2.getNome() + jogador2.peca.toStringDeck() + "\nScore: "+jogador2.peca.getScore());
 		
 		scan.close();
 		flag = "Fim!";
@@ -89,9 +89,9 @@ public class Main{
 
 	static void setVencedor(Jogador jogador1, Jogador jogador2) {
 
-			if(jogador1.peça.getScore() > jogador2.peça.getScore()) {
+			if(jogador1.peca.getScore() > jogador2.peca.getScore()) {
 				vencedor = jogador1.getNome();
-			} else if (jogador2.peça.getScore() > jogador1.peça.getScore()) {
+			} else if (jogador2.peca.getScore() > jogador1.peca.getScore()) {
 				vencedor = jogador2.getNome();
 			}
 		}

@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Jogador{
 	private String nome;
-	public Peça peça;
+	public Peca peca;
 	public String vencedor;
 	private Scanner scanName;
 	
 	public Jogador() {
 		setNome();
-		this.peça = new Peça();
+		this.peca = new Peca();
 	}
 	
 	public String getNome() {
@@ -23,13 +23,13 @@ public class Jogador{
 	}
 	
 	public void setBasics() {
-		peça.setPeça();
-		peça.setValor();
+		peca.setPeca();
+		peca.setValor();
 		}
 	
 	@Override
 	public String toString() {
-		return "Jogador: " + nome + "\nPeça: " + this.peça.getPeça();
+		return "Jogador: " + nome + "\npeca: " + this.peca.getPeca();
 	}
 	
 }
