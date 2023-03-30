@@ -7,6 +7,48 @@ import entity.Jogador;
 
 public class ManipuladorDeDomino extends Jogador{
     private List<Jogador> jogadores = new ArrayList<Jogador>();
+	
+	public Jogador getMVP(List<Jogador> jogadores) {
+		Jogador jogadorComMaiorPontuacao = null;
+		int maiorPontuacao = 0;
+
+		for (Jogador jogador : jogadores) {
+			int pontuacao = jogador.getPontuacao();
+			if (pontuacao > maiorPontuacao) {
+				jogadorComMaiorPontuacao = jogador;
+				maiorPontuacao = pontuacao;
+			}
+		}
+		return jogadorComMaiorPontuacao;
+	}
+
+	public List<Jogador> getJogadores() {
+		return this.jogadores;
+	}
+
+	public ManipuladorDeDomino(){
+		this.gerarJogadores(5);
+	}
+
+	public  void gerarJogadores(int numeroDeJogadores){
+		for(int i = 0; i < numeroDeJogadores; i++){
+			Jogador jogador = new Jogador();
+			this.jogadores.add(jogador);
+		}
+	}
+
+
+	public Jogador getJogador(int posicao){
+		if(this.jogadores.size() >= posicao){
+			Jogador jogador = this.jogadores.get(posicao);
+			return jogador;
+	}
+	else{
+		return null;
+	}
+}
+}
+
 // 	public static void clearConsole() {
 // 	    for (int i = 0; i < 100; i++) {
 // 	        System.out.println();
@@ -84,18 +126,18 @@ public class ManipuladorDeDomino extends Jogador{
 // 	}
 // }
     
-	public Jogador getVencedor() {
-        Jogador vencedor = jogadores[0];
-        for(int i = 0; i< jogadores.length; i++){
-            if(jogadores[i].getScore() > jogadores[i + 1].getScore()) {
-				vencedor = jogadores[i];
-			} 
-        }
-        return vencedor;
-			// if(jogadores[0].getScore() > jogadores[1].getScore()) {
-			// 	return jogador1;
-			// } else if (jogador2.peca.getScore() > jogador1.peca.getScore()) {
-			// 	vencedor = jogador2.getNome();
-			// }
-		}
-}
+// 	public Jogador getVencedor() {
+//         Jogador vencedor = jogadores[0];
+//         for(int i = 0; i< jogadores.length; i++){
+//             if(jogadores[i].getScore() > jogadores[i + 1].getScore()) {
+// 				vencedor = jogadores[i];
+// 			} 
+//         }
+//         return vencedor;
+// 			// if(jogadores[0].getScore() > jogadores[1].getScore()) {
+// 			// 	return jogador1;
+// 			// } else if (jogador2.peca.getScore() > jogador1.peca.getScore()) {
+// 			// 	vencedor = jogador2.getNome();
+// 			// }
+// 		}
+// }

@@ -1,14 +1,14 @@
 package domino;
 
-import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
-
-import entity.Jogador;
-
 public class Main{
 	public static void main(String[] args) {
-		System.out.println("O nome do jogador é: ");
 		ManipuladorDeDomino manipulador = new ManipuladorDeDomino();
-		System.out.println(manipulador.getVencedor());
+		manipulador.getJogador(0).setPontuacao(5);
+		manipulador.getJogador(1).setPontuacao(3);
+		System.out.println("MVP: " + manipulador.getMVP(manipulador.getJogadores()).getNome() + " - " + manipulador.getMVP(manipulador.getJogadores()).getPontuacao());
+		System.out.println("Pontuação do jogador 0:" + manipulador.getJogador(0).getPontuacao());
+		System.out.println("Pontuação do jogador 0:" + manipulador.getJogador(1).getPontuacao());
+		System.out.println("Pontuação do jogador 0:" + manipulador.getJogador(2).getPontuacao());
+		System.out.println("Pontuação do jogador 0:" + manipulador.getJogador(3).getPontuacao());
 	}
 	}

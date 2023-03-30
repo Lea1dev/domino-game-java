@@ -30,6 +30,7 @@ public class Jogador extends Peca{
 	public void setNome() {
 		try{
 			scanName = new Scanner(System.in);
+			System.out.println("Qual o nome do jogador? ");
 			this.nome = scanName.nextLine();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -41,6 +42,8 @@ public class Jogador extends Peca{
 		peca.setValor();
 		}
 	
+	
+
 	@Override
 	public String toString() {
 		return "Jogador: " + nome + "\npeca: " + this.peca.getPeca();
