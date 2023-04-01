@@ -8,7 +8,7 @@ public class Jogador extends Peca{
 	public int pontuacao;
 
 	public int getPontuacao() {
-		return pontuacao;
+		return this.pontuacao;
 	}
 
 	public void setPontuacao(int pontuacao) {
@@ -19,7 +19,6 @@ public class Jogador extends Peca{
 	
 	public Jogador() {
 		this.setNome();
-		this.peca = new Peca();
 		this.pontuacao = 0;
 	}
 	
@@ -36,13 +35,6 @@ public class Jogador extends Peca{
 			e.printStackTrace();
 		}
 	}
-	
-	public void setBasics() {
-		peca.setPeca();
-		peca.setValor();
-		}
-	
-	
 
 	@Override
 	public String toString() {
