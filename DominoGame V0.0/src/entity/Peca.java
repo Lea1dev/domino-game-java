@@ -5,13 +5,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class Peca {
-	private List<Integer> peca = new ArrayList<Integer>();
+	private List<Integer> faces = new ArrayList<Integer>();
 	private List<Integer> lista = new ArrayList<Integer>();
-	private List<Integer> deck = new ArrayList<Integer>();
-	private int valor;
+	// private List<Integer> deck = new ArrayList<Integer>();
+	protected int valor;
 
 	public Peca() {
-
+	
 	}
 
 	public void setLista() {
@@ -20,29 +20,21 @@ public class Peca {
 		}
 	}
 
-	public List<Integer> getPeca() {
-		return peca;
+	public List<Integer> getFaces() {
+		return faces;
 	}
 
-	public void setPeca() {
+	public void setFaces() {
 		this.setLista();
 		Collections.shuffle(this.lista);
-		this.peca.add(lista.get(0));
-		this.peca.add(lista.get(1));
-	}
-
-	public List<Integer> getDeck() {
-		return deck;
-	}
-
-	public void setDeck() {
-		this.deck.addAll(this.peca.subList(0, 2));
-		this.peca.clear();
+		this.faces.clear();
+		this.faces.add(lista.get(0));
+		this.faces.add(lista.get(1));
 	}
 
 	public void setValor() {
-		int faceEsquerda = this.peca.get(0);
-		int faceDireita = this.peca.get(1);
+		int faceEsquerda = this.faces.get(0);
+		int faceDireita = this.faces.get(1);
 		if (faceEsquerda == faceDireita) {
 			this.valor = 2 * (faceEsquerda + faceDireita);
 		} else if ((faceEsquerda % 2 != 0) && (faceDireita % 2 != 0) && (faceEsquerda != faceDireita)) {
@@ -58,11 +50,7 @@ public class Peca {
 
 	@Override
 	public String toString() {
-		return "peca: " + this.peca;
-	}
-
-	public String toStringDeck() {
-		return "\nDeck: " + getDeck();
+		return "peca: " + this.faces;
 	}
 
 	public String toStringValor() {
